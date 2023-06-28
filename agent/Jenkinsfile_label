@@ -1,0 +1,23 @@
+pipeline{
+	
+	stages{
+		stage('BUILD'){
+			agent {label 'jenkins'}
+			steps{
+			sh 'sleep5'
+			}
+		}
+		stage('TEST'){
+			agent {label 'agent1'}
+			steps{
+			sh 'sleep 5'
+			}
+		}
+		stage('DEPLOY'){
+			agent any
+			steps{
+			sh 'sleep 5'
+			}
+		}
+	}
+}
