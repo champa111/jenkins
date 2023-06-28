@@ -2,7 +2,7 @@ pipeline{
 	
 	stages{
 		stage('BUILD'){
-			agent {label 'jenkins'}
+			agent {label 'master'}
 			steps{
 			sh 'sleep5'
 			}
