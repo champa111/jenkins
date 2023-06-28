@@ -14,7 +14,7 @@ pipeline{
 			}
 		}
 		stage('DEPLOY'){
-			agent none
+			agent any
 			steps{
 			sh 'sleep 5'
 			}
