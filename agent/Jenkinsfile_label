@@ -4,7 +4,7 @@ pipeline{
 		stage('BUILD'){
 			agent {label 'master'}
 			steps{
-			sh 'sleep5'
+			sh 'sleep 5'
 			}
 		}
 		stage('TEST'){
