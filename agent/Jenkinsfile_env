@@ -1,0 +1,29 @@
+pipeline{
+	agent none
+	environment{
+	DEPLOY_TO = 'production'
+	}
+	stages{
+		stage('BUILD'){
+			agent {label 'jenkins'}
+			environment{
+			BUILD_STAGE = 'yes'
+		}
+			steps{
+			sh 'sleep 5'
+			}
+		}
+		stage('TEST'){
+			agent {label 'agent1'}
+			steps{
+			sh 'sleep 5'
+			}
+		}
+		stage('DEPLOY'){
+			agent any
+			steps{
+			echo "${DEPLOY_TO}"
+			}
+		}
+	}
+}
