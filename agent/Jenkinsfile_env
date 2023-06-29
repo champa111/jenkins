@@ -22,7 +22,7 @@ pipeline{
 		stage('DEPLOY'){
 			agent any
 			steps{
-			echo "${DEPLOY_TO}"
+			echo "${env.DEPLOY_TO}"
 			}
 		}
 	}
