@@ -1,5 +1,11 @@
 pipeline {
-    agent any    
+    agent any  
+
+    parameters {
+    choice choices: ['qa', 'test', 'dev', 'prod'], name: 'DEPLOY'
+    }
+
+    }  
     stages{
         stage ('BUILD'){
             steps{
