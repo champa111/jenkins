@@ -9,9 +9,6 @@ pipeline {
                         echo "Deploying to TEST ...."
                     } else if (ENVIRONMENT == 'qa') {
                         echo "Deploying to qa ...."
-                    } else (ENVIRONMENT == 'dev') {
-                        echo "Deploying to dev ...."
-                        
                         
                     }
                 }
