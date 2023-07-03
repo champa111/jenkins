@@ -8,31 +8,30 @@ pipeline {
 			BUILD_STAGE = 'yes'
 		}
 			steps{
-			sh 'sleep 5'
+			    sh 'sleep 5'
 			}
 		}
 		stage('TEST MULTIPLE'){
             parallel{
                 stage('TEST1'){  
                     steps{
-                    sh 'sleep 5'
+                        sh 'sleep 5'
                     }
                 }
                 stage('TEST2'){  
                     steps{
-                    sh 'sleep 5'
+                        sh 'sleep 5'
                     }
                 }
                 stage('TEST3'){  
                     steps{
-                    sh 'sleep 5'
+                        sh 'sleep 5'
                      }   
                 }
 		}
 		stage('DEPLOY'){
-			agent any
 			steps{
-			echo "DEPLOY"
+			    sh 'sleep 5' 
 			}
 		}
 	}
