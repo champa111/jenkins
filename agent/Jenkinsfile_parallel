@@ -32,7 +32,7 @@ pipeline{
 		stage('DEPLOY'){
 			agent any
 			steps{
-			echo "${env.DEPLOY_TO}"
+			echo "DEPLOY"
 			}
 		}
 	}
