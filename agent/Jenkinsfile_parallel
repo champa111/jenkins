@@ -1,0 +1,39 @@
+pipeline{
+	agent any
+	
+	stages{
+		stage('BUILD'){
+			agent {label 'master'}
+			environment{
+			BUILD_STAGE = 'yes'
+		}
+			steps{
+			sh 'sleep 5'
+			}
+		}
+		stage('TEST MULTIPLE'){
+            parallel{
+                stage('TEST1'){  
+                    steps{
+                    sh 'sleep 5'
+                    }
+                }
+                stage('TEST2'){  
+                    steps{
+                    sh 'sleep 5'
+                    }
+                }
+                stage('TEST3'){  
+                    steps{
+                    sh 'sleep 5'
+                     }   
+                }
+		}
+		stage('DEPLOY'){
+			agent any
+			steps{
+			echo "${env.DEPLOY_TO}"
+			}
+		}
+	}
+}
